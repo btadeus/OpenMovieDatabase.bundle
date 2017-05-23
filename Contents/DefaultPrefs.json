@@ -108,5 +108,11 @@
     "label": "Add Rotten Tomatoes rating to summary",
     "type": "bool",
     "default": "false"
+  },
+  {
+    "id": "api_key",
+    "label": "Personal API key",
+    "type": "text",
+    "default": ""
   }
 ]

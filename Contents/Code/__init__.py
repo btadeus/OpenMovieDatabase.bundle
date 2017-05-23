@@ -1,4 +1,4 @@
-API_URL = 'http://www.omdbapi.com/?i=%s&plot=%s&tomatoes=true'
+API_URL = 'http://www.omdbapi.com/?apikey=%s&i=%s&plot=%s&tomatoes=true'
 RE_RUNTIME = Regex('((?P<hours>[0-9]+) hrs? )?(?P<minutes>[0-9]+) min')
 
 def Start():
@@ -54,7 +54,7 @@ class OmdbApi(Agent.Movies):
     else:
       plot = 'full'
 
-    url = API_URL % (metadata.id, plot)
+    url = API_URL % (Prefs['api_key'], metadata.id, plot)
 
     try:
       movie = JSON.ObjectFromURL(url, sleep=5.0)
